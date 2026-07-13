@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TaskForm() {
+function TaskForm({ onAddTask }) {
   const [task, setTask] = useState("");
 
   const handleSubmit = (e) => {
@@ -8,7 +8,7 @@ function TaskForm() {
 
     if (task.trim() === "") return;
 
-    console.log(task);
+    onAddTask(task);
 
     setTask("");
   };
