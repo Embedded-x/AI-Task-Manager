@@ -2,7 +2,8 @@ import TaskItem from "./TaskItem";
 
 function TaskList({
     tasks,
-    onDeleteTask
+    onDeleteTask,
+    onToggleTask
 }) {
     return (
       <div>
@@ -14,6 +15,7 @@ function TaskList({
                     key={task.id}
                     task={task}
                     onDeleteTask={onDeleteTask}
+                    onToggleTask={onToggleTask}
                 />
             ))
         )}

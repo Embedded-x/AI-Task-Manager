@@ -24,6 +24,21 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const toggleTask = (id) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          completed: !task.completed,
+        };
+      }
+  
+      return task;
+    });
+  
+    setTasks(updatedTasks);
+  };
+
   return (
     <div>
       <Header />
@@ -31,6 +46,7 @@ function App() {
       <TaskList
           tasks={tasks}
           onDeleteTask={deleteTask}
+          onToggleTask={toggleTask}
       />
     </div>
   );
