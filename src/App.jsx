@@ -16,11 +16,22 @@ function App() {
     setTasks([...tasks, newTask]);
   };
 
+  const deleteTask = (id) => {
+    const updatedTasks = tasks.filter(
+      (task) => task.id !== id
+    );
+  
+    setTasks(updatedTasks);
+  };
+
   return (
     <div>
       <Header />
       <TaskForm onAddTask={addTask} />
-      <TaskList tasks={tasks} />
+      <TaskList
+          tasks={tasks}
+          onDeleteTask={deleteTask}
+      />
     </div>
   );
 }
