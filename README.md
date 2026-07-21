@@ -6,7 +6,8 @@ A modern and responsive AI-assisted Task Manager built using **React + Vite**. T
 
 ## 📸 Preview
 
-> Add a screenshot of your application here after deployment.
+<img width="1200" height="750" alt="image" src="https://github.com/user-attachments/assets/18b99b65-0d99-4015-9aff-1a6f9f48a92d" />
+
 
 ---
 
