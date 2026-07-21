@@ -53,7 +53,7 @@ README.md
 ## 🚀 Installation
 
 ```bash
-git clone <your-github-repo>
+git clone <https://github.com/Embedded-x/AI-Task-Manager>
 
 cd ai-task-manager
 
