@@ -1,36 +1,60 @@
 import "../styles/TaskItem.css";
 
-function TaskItem({ task, onDeleteTask, onToggleTask, onEditTask }) {
+function TaskItem({
+  task,
+  onDeleteTask,
+  onToggleTask,
+  onEditTask,
+}) {
   return (
     <div className="task-item">
-      <div className="task-content">
+      <div className="task-left">
         <input
           type="checkbox"
           checked={task.completed}
           onChange={() => onToggleTask(task.id)}
+          className="task-checkbox"
         />
 
-        <span
-          style={{
-            textDecoration: task.completed ? "line-through" : "none",
-          }}
-        >
-          {task.text}
-        </span>
+        <div className="task-details">
+          <div className="task-header">
+            <h3
+              className={task.completed ? "completed" : ""}
+            >
+              {task.text}
+            </h3>
 
-        {task.completed && (
-          <span className="badge">
-            ✅ Completed
-          </span>
-        )}
+            <span
+              className={`priority ${task.priority.toLowerCase()}`}
+            >
+              {task.priority}
+            </span>
+          </div>
+
+          <div className="task-meta">
+            📅 {task.createdAt}
+          </div>
+
+          {task.completed && (
+            <span className="badge">
+              ✅ Completed
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="task-buttons">
-        <button onClick={() => onEditTask(task)}>
+        <button
+          className="edit-btn"
+          onClick={() => onEditTask(task)}
+        >
           ✏️ Edit
         </button>
 
-        <button onClick={() => onDeleteTask(task.id)}>
+        <button
+          className="delete-btn"
+          onClick={() => onDeleteTask(task.id)}
+        >
           🗑 Delete
         </button>
       </div>

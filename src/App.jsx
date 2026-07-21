@@ -17,15 +17,18 @@ function App() {
   const [editingTask, setEditingTask] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("all");
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  const addTask = (taskText) => {
+  const addTask = (taskData) => {
+
     const newTask = {
       id: Date.now(),
-      text: taskText,
+      text: taskData.text,
+      priority: taskData.priority,
       completed: false,
       createdAt: new Date().toLocaleString(),
     };
@@ -80,8 +83,18 @@ function App() {
     });
 
   return (
-    <div className="app">
-      <Header />
+    <div className={darkMode ? "app dark" : "app"}>
+      <div className="top-bar">
+        <Header />
+
+        <button
+          className="theme-btn"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? "☀ Light" : "🌙 Dark"}
+        </button>
+      </div>
+
       <TaskForm
         onAddTask={addTask}
         editingTask={editingTask}
@@ -106,7 +119,7 @@ function App() {
           onToggleTask={toggleTask}
           onEditTask={editTask}
       />
-      
+
       <Footer />
     </div>
   );

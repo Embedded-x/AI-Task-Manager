@@ -1,16 +1,127 @@
-# React + Vite
+# 🚀 AI Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive AI-assisted Task Manager built using **React + Vite**. The application helps users efficiently manage daily tasks with a clean interface and essential productivity features.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Preview
 
-## React Compiler
+> Add a screenshot of your application here after deployment.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ Add, edit, and delete tasks
+- ✅ Mark tasks as completed
+- 🔍 Search tasks instantly
+- 🎯 Filter (All / Completed / Pending)
+- 📊 Task statistics dashboard
+- 💾 Local Storage persistence
+- 🔥 Priority Levels (High / Medium / Low)
+- 🌙 Dark Mode
+- 📱 Fully Responsive Design
+- 🎨 Modern UI with animations
+
+---
+
+## 🛠️ Tech Stack
+
+- React
+- Vite
+- JavaScript (ES6+)
+- CSS3
+- Local Storage
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+ ├── components/
+ ├── styles/
+ ├── App.jsx
+ ├── main.jsx
+public/
+package.json
+README.md
+```
+
+---
+
+## 🚀 Installation
+
+```bash
+git clone <your-github-repo>
+
+cd ai-task-manager
+
+npm install
+
+npm run dev
+```
+
+---
+
+## 🌐 Live Demo
+
+Vercel:
+
+(Add your deployed link here)
+
+---
+
+## 📖 Learning Outcomes
+
+During this project I learned:
+
+- React Components
+- Props & State
+- Hooks (useState & useEffect)
+- Conditional Rendering
+- Local Storage
+- Component-based Architecture
+- Responsive UI Design
+- Debugging and Refactoring
+
+---
+
+## 🤖 AI Assistance
+
+AI was used as a development assistant for:
+
+- Code generation
+- Debugging
+- UI improvement suggestions
+- React best practices
+- CSS refinement
+- Code explanations
+
+All generated code was manually reviewed, tested, modified, and integrated into the project.
+
+---
+
+## ✨ Manual Improvements
+
+After reviewing AI-generated code, I manually:
+
+- Improved component structure
+- Refactored reusable code
+- Redesigned the UI
+- Added Priority Levels
+- Added Dark Mode
+- Improved responsiveness
+- Fixed layout issues
+- Improved task card spacing
+- Enhanced styling and animations
+
+---
+
+## 👨‍💻 Author
+
+**Tarun Kumar Garg**
+
+JSS Academy of Technical Education, Noida
+
+Information Technology

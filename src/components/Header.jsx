@@ -2,11 +2,9 @@ import "../styles/Header.css";
 
 function Header() {
   return (
-    <header>
+    <header className="header">
       <h1>🚀 AI Task Manager</h1>
-      <p>
-        Organize your work, stay productive, and accomplish your daily goals.
-      </p>
+      <p>Organize your work. Stay productive. Achieve more every day.</p>
     </header>
   );
 }
