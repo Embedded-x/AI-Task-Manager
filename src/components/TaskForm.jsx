@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react";
+import "../styles/TaskForm.css";
 
 function TaskForm({ onAddTask, editingTask, onUpdateTask, }) {
   const [task, setTask] = useState("");
@@ -27,7 +28,7 @@ function TaskForm({ onAddTask, editingTask, onUpdateTask, }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="task-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Enter a task..."
@@ -36,7 +37,7 @@ function TaskForm({ onAddTask, editingTask, onUpdateTask, }) {
       />
 
       <button type="submit">
-        {editingTask ? "Update Task" : "Add Task"}
+       {editingTask ? "✏️ Update Task" : "➕ Add Task"} 
       </button>
     </form>
   );

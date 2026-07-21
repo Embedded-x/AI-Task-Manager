@@ -1,0 +1,16 @@
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin:25px 0;
+}
+
+.stats p{
+    background:#2563eb;
+    color:white;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    font-size:17px;
+    font-weight:600;
+}

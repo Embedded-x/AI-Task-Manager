@@ -2,6 +2,11 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
+import SearchBar from "./components/SearchBar";
+import Stats from "./components/Stats";
+import Filter from "./components/Filter";
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -11,6 +16,7 @@ function App() {
 
   const [editingTask, setEditingTask] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -21,6 +27,7 @@ function App() {
       id: Date.now(),
       text: taskText,
       completed: false,
+      createdAt: new Date().toLocaleString(),
     };
   
     setTasks([...tasks, newTask]);
@@ -62,20 +69,45 @@ function App() {
     setEditingTask(null);
   };
 
+  const filteredTasks = tasks
+    .filter((task) =>
+      task.text.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .filter((task) => {
+      if (filter === "completed") return task.completed;
+      if (filter === "pending") return !task.completed;
+      return true;
+    });
+
   return (
-    <div>
+    <div className="app">
       <Header />
       <TaskForm
         onAddTask={addTask}
         editingTask={editingTask}
         onUpdateTask={updateTask}
       />
+
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+
+      <Filter
+        filter={filter}
+        setFilter={setFilter}
+      />
+
+      <Stats tasks={tasks} />
+
       <TaskList
-          tasks={tasks}
+          tasks={filteredTasks}
           onDeleteTask={deleteTask}
           onToggleTask={toggleTask}
           onEditTask={editTask}
       />
+      
+      <Footer />
     </div>
   );
 }

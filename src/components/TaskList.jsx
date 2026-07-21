@@ -1,28 +1,35 @@
 import TaskItem from "./TaskItem";
+import "../styles/TaskList.css";
 
 function TaskList({
-    tasks,
-    onDeleteTask,
-    onToggleTask,
-    onEditTask,
+  tasks,
+  onDeleteTask,
+  onToggleTask,
+  onEditTask,
 }) {
+
+  if (tasks.length === 0) {
     return (
-      <div>
-        {tasks.length === 0 ? (
-          <p>No tasks yet.</p>
-        ) : (
-            tasks.map((task) => (
-                <TaskItem
-                    key={task.id}
-                    task={task}
-                    onDeleteTask={onDeleteTask}
-                    onToggleTask={onToggleTask}
-                    onEditTask={onEditTask}
-                />
-            ))
-        )}
+      <div className="empty-state">
+        <h2>📋 No Tasks Found</h2>
+        <p>Add your first task to get started.</p>
       </div>
     );
   }
-  
-  export default TaskList;
+
+  return (
+    <div className="task-list">
+      {tasks.map((task) => (
+        <TaskItem
+          key={task.id}
+          task={task}
+          onDeleteTask={onDeleteTask}
+          onToggleTask={onToggleTask}
+          onEditTask={onEditTask}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default TaskList;

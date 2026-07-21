@@ -1,0 +1,24 @@
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.empty-state h2 {
+    color: #2563eb;
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.empty-state p {
+    color: #666;
+    font-size: 17px;
+}
