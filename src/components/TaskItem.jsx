@@ -1,6 +1,6 @@
 import "../styles/TaskItem.css";
 
-function TaskItem({ task, onDeleteTask, onToggleTask }) {
+function TaskItem({ task, onDeleteTask, onToggleTask, onEditTask, }) {
     return (
       <div className="task-item">
         <div className="task-content">
@@ -20,11 +20,13 @@ function TaskItem({ task, onDeleteTask, onToggleTask }) {
         </div>
   
         <div className="task-buttons">
-          <button>Edit</button>
+            <button onClick={() => onEditTask(task)}>
+                Edit
+            </button>
   
-          <button onClick={() => onDeleteTask(task.id)}>
-            Delete
-          </button>
+            <button onClick={() => onDeleteTask(task.id)}>
+                Delete
+            </button>
         </div>
       </div>
     );

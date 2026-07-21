@@ -5,6 +5,7 @@ import TaskList from "./components/TaskList";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [editingTask, setEditingTask] = useState(null);
 
   const addTask = (taskText) => {
     const newTask = {
@@ -39,14 +40,32 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const editTask = (task) => {
+    setEditingTask(task);
+  };
+
+  const updateTask = (updatedTask) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === updatedTask.id ? updatedTask : task
+    );
+  
+    setTasks(updatedTasks);
+    setEditingTask(null);
+  };
+
   return (
     <div>
       <Header />
-      <TaskForm onAddTask={addTask} />
+      <TaskForm
+        onAddTask={addTask}
+        editingTask={editingTask}
+        onUpdateTask={updateTask}
+      />
       <TaskList
           tasks={tasks}
           onDeleteTask={deleteTask}
           onToggleTask={toggleTask}
+          onEditTask={editTask}
       />
     </div>
   );

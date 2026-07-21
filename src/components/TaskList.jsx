@@ -3,7 +3,8 @@ import TaskItem from "./TaskItem";
 function TaskList({
     tasks,
     onDeleteTask,
-    onToggleTask
+    onToggleTask,
+    onEditTask,
 }) {
     return (
       <div>
@@ -16,6 +17,7 @@ function TaskList({
                     task={task}
                     onDeleteTask={onDeleteTask}
                     onToggleTask={onToggleTask}
+                    onEditTask={onEditTask}
                 />
             ))
         )}

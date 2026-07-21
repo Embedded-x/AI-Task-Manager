@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
-function TaskForm({ onAddTask }) {
+function TaskForm({ onAddTask, editingTask, onUpdateTask, }) {
   const [task, setTask] = useState("");
+
+  useEffect(() => {
+    if (editingTask) {
+      setTask(editingTask.text);
+    }
+  }, [editingTask]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     if (task.trim() === "") return;
-
-    onAddTask(task);
-
+  
+    if (editingTask) {
+      onUpdateTask({
+        ...editingTask,
+        text: task,
+      });
+    } else {
+      onAddTask(task);
+    }
+  
     setTask("");
   };
 
@@ -22,7 +35,9 @@ function TaskForm({ onAddTask }) {
         onChange={(e) => setTask(e.target.value)}
       />
 
-      <button type="submit">Add Task</button>
+      <button type="submit">
+        {editingTask ? "Update Task" : "Add Task"}
+      </button>
     </form>
   );
 }
