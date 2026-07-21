@@ -68,7 +68,7 @@ npm run dev
 
 Vercel:
 
-(Add your deployed link here)
+https://ai-task-manager-ochre.vercel.app/
 
 ---
 
